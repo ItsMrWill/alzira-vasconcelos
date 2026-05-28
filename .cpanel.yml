@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/novovarejodemoda/public_html/lp.novovarejodemoda.com
+    - /usr/bin/rsync -a --exclude='.git' --exclude='.cpanel.yml' ./ $DEPLOYPATH/
