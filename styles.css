@@ -218,6 +218,13 @@ ul { list-style: none; }
 }
 .cta--on-dark:hover { background: var(--champagne); color: var(--onyx); }
 
+.cta--ghost-dark {
+  background: transparent;
+  color: var(--ivory);
+  border: 1px solid var(--ivory);
+}
+.cta--ghost-dark:hover { background: var(--ivory); color: var(--onyx); }
+
 .cta--full { width: 100%; justify-content: center; }
 
 /* ===========================
@@ -489,6 +496,37 @@ ul { list-style: none; }
 }
 
 /* ===========================
+   INFO PRÁTICAS (Seção 05)
+   =========================== */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 800px;
+}
+.info-item {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.info-item__label {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--champagne);
+}
+.info-item__value {
+  font-family: var(--f-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--onyx);
+}
+
+/* ===========================
    BIO (Seção 06)
    =========================== */
 .bio-grid {
@@ -498,20 +536,11 @@ ul { list-style: none; }
   align-items: center;
 }
 .bio-photo { position: relative; }
-.photo-placeholder {
-  background: var(--ivory-2);
+.bio-photo__img {
   width: 100%;
   aspect-ratio: 3/4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: monospace;
-  font-size: 14px;
-  color: var(--espresso);
-  opacity: .4;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='19' height='100' preserveAspectRatio='none'><rect x='18' y='0' width='1' height='100' fill='%230e0e0e' fill-opacity='0.08'/></svg>");
-  background-repeat: repeat;
-  background-size: 19px 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 .bio-text .eyebrow { margin-bottom: 16px; }
 .bio-text .section__h2 { margin-bottom: 32px; }
@@ -754,7 +783,7 @@ ul { list-style: none; }
   .manifesto__phrase { font-size: 64px; }
   .section--manifesto { padding: 100px 0; }
 
-  .prog-grid { grid-template-columns: 1fr; gap: 48px; }
+  .info-grid { grid-template-columns: 1fr; }
   .bio-grid { grid-template-columns: 1fr; }
 
   .depo-grid { grid-template-columns: 1fr; }
