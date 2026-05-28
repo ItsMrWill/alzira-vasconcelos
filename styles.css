@@ -344,7 +344,7 @@ ul { list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin-bottom: 48px;
+  margin-top: 32px;
 }
 .hero__meta-item {
   display: inline-flex;
@@ -550,7 +550,15 @@ ul { list-style: none; }
   font-style: italic;
   line-height: 1.5;
   color: var(--espresso);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+.bio-text__body {
+  font-family: var(--f-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--espresso);
+  margin-bottom: 16px;
   max-width: 520px;
 }
 .bio-creds { margin-bottom: 40px; }
@@ -660,6 +668,10 @@ ul { list-style: none; }
   color: var(--espresso);
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
+}
+.invest-whatsapp {
+  margin-top: 40px;
+  text-align: center;
 }
 
 /* ===========================
