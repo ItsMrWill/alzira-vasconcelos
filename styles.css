@@ -52,7 +52,7 @@ ul { list-style: none; }
   padding: 0 120px;
 }
 .text-champagne { color: var(--champagne); }
-.text-champagne-bold { color: var(--champagne); font-weight: 600; font-style: normal; }
+.text-champagne-bold { color: #8C6F3A; font-weight: 600; font-style: normal; }
 .text-strike {
   text-decoration: line-through;
   text-decoration-color: #C0392B;
