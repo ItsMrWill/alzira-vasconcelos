@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/novovarejodemoda/public_html/lp.novovarejodemoda.com
     - /bin/cp -R * $DEPLOYPATH/
+    - /bin/chmod 755 /home/novovarejodemoda/public_html/lp.novovarejodemoda.com
