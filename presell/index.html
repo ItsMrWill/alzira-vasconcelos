@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assista agora</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .headline {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 720px;
+      margin-bottom: 48px;
+      color: #111111;
+    }
+    .btn {
+      display: inline-block;
+      padding: 24px 48px;
+      background: #111111;
+      color: #ffffff;
+      font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn:hover { background: #333333; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="headline">O que você está prestes a ver vai mudar completamente a maneira que você trata a dor dos seus pacientes</h1>
+    <a href="#" id="cta-btn" class="btn">Toque aqui para assistir</a>
+  </div>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+      var utms = new URLSearchParams();
+      utmKeys.forEach(function(key) {
+        if (params.has(key)) utms.set(key, params.get(key));
+      });
+      var btn = document.getElementById('cta-btn');
+      var dest = btn.getAttribute('href');
+      if (dest && dest !== '#' && utms.toString() !== '') {
+        var url = new URL(dest, window.location.origin);
+        utms.forEach(function(val, key) { url.searchParams.set(key, val); });
+        btn.href = url.toString();
+      }
+      window.__utms = utms.toString();
+    })();
+
+    document.getElementById('cta-btn').addEventListener('click', function(e) {
+      if (this.getAttribute('href') === '#') {
+        e.preventDefault();
+        alert('Link de destino ainda não configurado.');
+      }
+    });
+  </script>
+</body>
+</html>
