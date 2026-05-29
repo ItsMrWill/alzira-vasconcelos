@@ -312,6 +312,21 @@
         }
       });
     });
+
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+      var utms = new URLSearchParams();
+      utmKeys.forEach(function(key) {
+        if (params.has(key)) utms.set(key, params.get(key));
+      });
+      if (utms.toString() === '') return;
+      document.querySelectorAll('a[href*="lastlink.com"]').forEach(function(a) {
+        var url = new URL(a.href);
+        utms.forEach(function(val, key) { url.searchParams.set(key, val); });
+        a.href = url.toString();
+      });
+    })();
   </script>
 </body>
 </html>
